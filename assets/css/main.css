@@ -1,0 +1,33 @@
+#navmenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px; /* Sidebar width */
+    height: 100vh; /* Full viewport height */
+    background-color: #333 !important;
+    color: #fff;
+    padding-top: 20px;
+    z-index: 1000; /* Ensures it is above other content */
+}
+
+/* List styles inside sidebar */
+#navmenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#navmenu ul li {
+    padding: 15px;
+}
+
+#navmenu ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Content styles */
+.main {
+    margin-left: 200px; /* Ensures content is pushed to the right */
+    padding: 20px;
+}
