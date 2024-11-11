@@ -2,12 +2,32 @@
   margin: 15px auto;
   display: block;
   width: 120px;
-  border: 8px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  border: 8px solid color-mix(in srgb, transparent 85%);
+}
+
+a {
+  color: #ffd700;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #050a13;
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+}
+
+a:hover {
+  color: color-mix(in srgb, #ffd700, transparent 25%);
+  text-decoration: none;
 }
 
 .header {
-  color: var(--default-color);
-  background-color: var(--background-color);
+
   position: fixed;
   top: 0;
   left: 0;
@@ -17,7 +37,68 @@
   transition: all ease-in-out 0.3s;
   overflow-y: auto;
   z-index: 997;
-  border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-right: 1px solid color-mix(in srgb, #272829, transparent 90%);
+}
+
+.header .logo {
+  line-height: 1;
+  margin-bottom: 15px;
+}
+
+.header .logo img {
+  max-height: 32px;
+  margin-right: 8px;
+}
+
+.header .logo h1 {
+  font-size: 24px;
+  margin: 0;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.header .social-links {
+  margin: 0 0 20px 0;
+}
+
+.header .social-links a {
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, #e2e2e2, transparent 90%);
+  color: #e2e2e2;
+  margin: 0 2px;
+  border-radius: 50%;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  transition: 0.3s;
+}
+
+.header .social-links a:hover {
+  color: #ffffff;
+  background: #ffd700;
+}
+
+.nav-link {
+  display: inline-flex; /* Align icon and text side-by-side */
+  align-items: center;  /* Center align the icon and text vertically */
+  gap: 6px;             /* Adds space between icon and text */
+  text-decoration: none; /* Removes underline */
+  color: inherit;       /* Inherit link color from Bootstrap */
+  padding-top: 4px; /* Reduce top padding of the anchor link */
+  padding-bottom: 4px; /* Reduce bottom padding of the anchor link */
+}
+
+.nav-link .navicon {
+  position: relative;
+  top: -2px; /* Raise the icon slightly */
+  font-size: 16px;      /* Icon size - adjust as needed */
+}
+
+.nav-item {
+  margin-bottom: 5px; /* Reduce the space between each list item */
 }
 
 #navmenu {
@@ -36,12 +117,12 @@
 }
 
 .main {
-  width: 100%;
-  height: 100vh;
-  /* Ensure main content takes up full viewport height */
+  width: calc(100% - 200px); /* Adjust width to account for left margin */
+  height: 100vh; /* Full viewport height */
   padding: 0;
-  margin: 0;
+  margin-left: 150px;
 }
+
 
 /* Home Section */
 .home {
@@ -83,7 +164,7 @@
 }
 
 #navmenu ul li {
-  padding: 15px;
+  padding: 5px;
 }
 
 #navmenu ul li a {
@@ -124,6 +205,11 @@
   .header {
     transform: translateX(-100%)
   }
+
+  .main {
+    width: 100%;
+    margin-left: 0px;
+  }
 }
 
 .header.header-show {
@@ -145,6 +231,8 @@
   z-index: 9999;
   transition: background-color 0.3s;
 }
+
+
 
 .subsec {
   margin-left: 0;
