@@ -5,6 +5,21 @@
   border: 8px solid color-mix(in srgb, var(--default-color), transparent 85%);
 }
 
+.header {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding: 0 15px;
+  width: 300px;
+  transition: all ease-in-out 0.3s;
+  overflow-y: auto;
+  z-index: 997;
+  border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
 #navmenu {
   position: fixed;
   top: 0;
@@ -56,11 +71,7 @@
   /* Place it behind the content */
 }
 
-.story{
-  margin-left: 6em;
-}
-
-.resume{
+.subsec{
   margin-left: 6em;
 }
 
@@ -79,3 +90,64 @@
   color: #fff;
   text-decoration: none;
 }
+
+/* Sidebar styles */
+#sidebar {
+  width: 200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: #343a40;
+  color: white;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  /* Ensure padding/border don’t alter dimensions */
+}
+
+#sidebar a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+}
+
+#sidebar a:hover {
+  background-color: #495057;
+}
+
+
+
+@media (max-width: 1199px) {
+  .header {
+    transform: translateX(-100%)
+  }
+}
+
+.header.header-show {
+  transform: translateX(0)
+}
+
+.header-toggle {
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 9999;
+  transition: background-color 0.3s;
+}
+
+.subsec {
+  margin-left: 0;
+}
+
+
