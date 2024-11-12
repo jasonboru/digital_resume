@@ -266,10 +266,50 @@ a:hover {
   transition: background-color 0.3s;
 }
 
+.header-toggle {
+  background-color: var(--accent-color); 
+  border-radius: 50%; /* Makes it a circle */
+  padding: 10px; /* Adjust padding for size of circle */
+  color: black; /* Icon color */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.header-toggle:hover {
+  background-color: transparent; /* Background disappears on hover */
+}
+
 
 
 .subsec {
   margin-left: 0;
 }
 
+#certifications .certs {
+  display: flex; /* Align items in a row */
+  align-items: flex-start; /* Align image and text at the top */
+  gap: 20px; /* Space between image and text */
+  margin-bottom: 20px; /* Space between each certificate block */
+}
 
+#certifications .certs img {
+  width: 200px; /* Scale down image to a fixed width */
+  height: auto; /* Maintain image aspect ratio */
+  object-fit: contain; /* Adjust image to fit within bounds without stretching */
+}
+
+#certifications .text-block {
+  max-width: 900px; /* Optional: limit text width for readability */
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  #certifications .certs {
+      flex-direction: column; /* Stack image above text on smaller screens */
+      align-items: center;
+  }
+  
+  #certifications .certs img {
+      width: 100%; /* Scale image to the width of the container */
+      max-width: 300px; /* Optional: set max width to prevent it from getting too large */
+  }
+}
