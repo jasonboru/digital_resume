@@ -47,12 +47,18 @@
                     </div>
                     <div class="position-sticky pt-3">
                         <ul class="nav flex-column">
-                            <li class="nav-item"><a class="nav-link active" href="#home"><i class="bi bi-house navicon"></i>Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#story"><i class="bi bi-person navicon"></i>My Story</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#resume"><i class="bi bi-file-earmark-text navicon"></i>Resume</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#certs"><i class="bi bi-trophy navicon"></i>Certifications</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#contact"><i class="bi bi-envelope navicon"></i>Contact</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="#home"><i
+                                        class="bi bi-house navicon"></i>Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#story"><i
+                                        class="bi bi-person navicon"></i>My Story</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#resume"><i
+                                        class="bi bi-file-earmark-text navicon"></i>Resume</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#certs"><i
+                                        class="bi bi-trophy navicon"></i>Certifications</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#contact"><i
+                                        class="bi bi-envelope navicon"></i>Contact</a></li>
                         </ul>
+
                     </div>
                 </nav>
             </header>
@@ -62,7 +68,7 @@
                 <!-- Home Section -->
                 <section id="home" class="home">
 
-                    <img src="assets/img/motherboard002.png" alt="" data-aos="fade-in" class="">
+                    <img src="assets/img/mb_bg.jpg" alt="" data-aos="fade-in" class="">
 
 
 
@@ -257,6 +263,31 @@
             headerToggleBtn.classList.toggle('bi-x');
         }
         headerToggleBtn.addEventListener('click', headerToggle);
+
+        // Select all navigation links
+        const navLinks = document.querySelectorAll('#navmenu .nav-link');
+        // Select the header, nav links, and the button (if needed)
+        const header = document.querySelector('.header'); // Adjust the selector to match your header element
+
+        // Function to handle click and update the active link
+        navLinks.forEach(link => {
+            link.addEventListener('click', function () {
+                // Remove .active from any currently active link
+                navLinks.forEach(link => link.classList.remove('active'));
+
+                // Add .active to the clicked link
+                this.classList.add('active');
+            });
+        });
+
+        // Function to remove .header-show class when a nav link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener('click', function () {
+                header.classList.remove('header-show');
+                headerToggleBtn.classList.toggle('bi-list');
+                headerToggleBtn.classList.toggle('bi-x');
+            });
+        });
     </script>
 </body>
 

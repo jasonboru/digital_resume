@@ -1,3 +1,20 @@
+/* Global Colors */
+:root { 
+  --default-color: #272829; 
+  --heading-color: #050d18; 
+  --accent-color: #ffd700; 
+  --contrast-color: #ffffff; 
+  --background-color: #f3f3f3;
+}
+
+/* Nav Menu Colors */
+:root {
+  --nav-color: #a8a9b4; 
+  --nav-hover-color: #ffffff; 
+  --nav-mobile-background-color: #040b14; /* Used as the background color for mobile navigation menu */
+}
+
+
 .profile-img img {
   margin: 15px auto;
   display: block;
@@ -6,7 +23,7 @@
 }
 
 a {
-  color: #ffd700;
+  color: var(--accent-color);
   text-decoration: none;
   transition: 0.3s;
 }
@@ -17,17 +34,17 @@ h3,
 h4,
 h5,
 h6 {
-  color: #050a13;
+  color: var(--default-color);
   font-family: "IBM Plex Sans Condensed", sans-serif;
 }
 
 a:hover {
-  color: color-mix(in srgb, #ffd700, transparent 25%);
+  color: color-mix(in srgb, var(--accent-color) transparent 25%);
   text-decoration: none;
 }
 
 .header {
-
+  background-color: var(--heading-color);
   position: fixed;
   top: 0;
   left: 0;
@@ -37,7 +54,7 @@ a:hover {
   transition: all ease-in-out 0.3s;
   overflow-y: auto;
   z-index: 997;
-  border-right: 1px solid color-mix(in srgb, #272829, transparent 90%);
+  border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .header .logo {
@@ -54,7 +71,7 @@ a:hover {
   font-size: 24px;
   margin: 0;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--contrast-color);
 }
 
 .header .social-links {
@@ -66,8 +83,8 @@ a:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: color-mix(in srgb, #e2e2e2, transparent 90%);
-  color: #e2e2e2;
+  background: color-mix(in srgb, var(--background-color) transparent 90%);
+  color: var(--background-color);
   margin: 0 2px;
   border-radius: 50%;
   text-align: center;
@@ -77,8 +94,8 @@ a:hover {
 }
 
 .header .social-links a:hover {
-  color: #ffffff;
-  background: #ffd700;
+  color: var(--contrast-color);
+  background: var(--accent-color);
 }
 
 .nav-link {
@@ -105,19 +122,20 @@ a:hover {
   position: fixed;
   top: 0;
   left: 0;
-  width: 200px;
+  width: 300px;
   /* Sidebar width */
   height: 100vh;
   /* Full viewport height */
-  background-color: #333 !important;
-  color: #fff;
+  background-color: var(--heading-color)!important;
+  color: var(--contrast-color);
   padding-top: 20px;
   z-index: 1000;
   /* Ensures it is above other content */
 }
 
+
 .main {
-  width: calc(100% - 200px); /* Adjust width to account for left margin */
+  width: calc(100% - 300px); /* Adjust width to account for left margin */
   height: 100vh; /* Full viewport height */
   padding: 0;
   margin-left: 150px;
@@ -168,8 +186,24 @@ a:hover {
 }
 
 #navmenu ul li a {
-  color: #fff;
+  color: var(--nav-color);
   text-decoration: none;
+}
+
+#navmenu .nav-link.active {
+  color: var(--nav-hover-color); 
+}
+
+#navmenu .nav-link.active .navicon {
+  color: var(--accent-color); 
+}
+
+#navmenu .nav-link:hover {
+  color: var(--nav-hover-color);; /* Gold color for text on hover */
+}
+
+#navmenu .nav-link:hover .navicon {
+  color: var(--accent-color); /* White color for icon on hover */
 }
 
 /* Sidebar styles */
