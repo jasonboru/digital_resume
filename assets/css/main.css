@@ -3,7 +3,7 @@
   --default-color: #272829; 
   --heading-color: #050d18; 
   --accent-color: #ffd700;
-  --main-accent-color: #1b3622;
+  --main-accent-color: #448b57;
   --contrast-color: #ffffff; 
   --background-color: #f3f3f3;
 }
@@ -13,6 +13,10 @@
   --nav-color: #a8a9b4; 
   --nav-hover-color: #ffffff; 
   --nav-mobile-background-color: #040b14; /* Used as the background color for mobile navigation menu */
+}
+
+body {
+  background-color: var(--background-color);
 }
 
 
@@ -119,7 +123,7 @@ a:hover {
 }
 
 .nav-item {
-  margin-bottom: 5px; /* Reduce the space between each list item */
+  margin-bottom: 15px; /* Reduce the space between each list item */
 }
 
 #navmenu {
@@ -334,9 +338,9 @@ section, .section {
 }
 
 .resume-item {
-  padding: 0 0 20px 20px;
+  padding: 0 0 20px 30px;
   margin-top: -2px;
-  border-left: 2px solid var(--accent-color);
+  border-left: 4px solid var(--main-accent-color);
   position: relative;
 }
 
@@ -372,17 +376,17 @@ section, .section {
 .resume-item::before {
   content: "";
   position: absolute;
-  width: 16px;
-  height: 16px;
+  width: 30px;
+  height: 30px;
   border-radius: 50px;
-  left: -9px;
+  left: -15px;
   top: 0;
   background: var(--background-color);
-  border: 2px solid var(--accent-color);
+  border: 4px solid var(--main-accent-color);
 }
 
 .section-title{
-  padding-bottom: 60px;
+  padding-bottom: 40px;
 }
 
 .section-title h2 {
@@ -397,7 +401,7 @@ section, .section {
   display: block;
   width: 50px;
   height: 3px;
-  background: var(--accent-color);
+  background: var(--main-accent-color);
   left: 0;
   bottom: -10px;
 }
@@ -415,4 +419,79 @@ section, .section {
   margin-right: 5px;
   color: var(--main-accent-color);
   line-height: 0;
+}
+
+.contact .info-wrap {
+  background-color: var(--surface-color);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+.contact .info-item i {
+  font-size: 20px;
+  color: var(--main-accent-color);
+  background: color-mix(in srgb, var(--main-accent-color), transparent 92%);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+  margin-right: 15px;
+}
+
+.contact .info-item {
+  margin-bottom: 40px;
+}
+
+.contact .info-item:hover i {
+  background: var(--main-accent-color);
+  color: var(--contrast-color);
+}
+
+.contact .info-item h3 {
+  padding: 0;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.contact .info-item p {
+  padding: 0;
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+.contact .email-form {
+  background-color: var(--contrast-color);
+  height: 100%;
+  padding: 30px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact .email-form input[type=text],
+.contact .email-form input[type=email],
+.contact .email-form textarea {
+  font-size: 14px;
+  padding: 10px 15px;
+  box-shadow: none;
+  border-radius: 0;
+  color: var(--default-color);
+  background-color: var(--contrast-color);
+  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+}
+
+.contact .email-form button[type="submit"] {
+  color: var(--contrast-color);
+  background: var(--main-accent-color);
+  border: 0;
+  padding: 10px 30px;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+.contact .email-form button[type=submit]:hover {
+  background: color-mix(in srgb, var(--main-accent-color), transparent 25%);
+  color: var(--main-accent-color);
 }
