@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Left Side Fixed Navigation</title>
+    <title>Jason O'Brien | Digital Resume</title>
 
     <!-- Vendor CSS Files -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -42,8 +42,10 @@
                         <h1 class="sitename">Jason OBrien</h1>
                     </a>
                     <div class="social-links text-center">
-                        <a href="#" class="github"><i class="bi bi-github"></i></a>
-                        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://github.com/jasonboru" target="_blank" class="github"><i
+                                class="bi bi-github"></i></a>
+                        <a href="https://www.linkedin.com/in/jason-m-obrien/" target="_blank" class="linkedin"><i
+                                class="bi bi-linkedin"></i></a>
                     </div>
                     <div class="position-sticky pt-3">
                         <ul class="nav flex-column">
@@ -172,7 +174,8 @@
 
                                 <div class="resume-item pb-0">
                                     <h4>Jason O'Brien</h4>
-                                    <p><em>Dedicated Professional with 25 Years of Loyalty, Transitioning to IT. CompTIA
+                                    <p><em>Dedicated Professional with 25 Years of Customer Service, Transitioning to
+                                            IT. CompTIA
                                             A+ Certified and Driven to Learn, Skilled in IT Support and Eager to Apply
                                             Expertise in a New Role. Quick Learner with Hands-on IT Experience Across
                                             Multiple Business Locations.</em></p>
@@ -392,42 +395,10 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        /*** Header toggle */
-        const headerToggleBtn = document.querySelector('.header-toggle');
 
-        function headerToggle() {
-            document.querySelector('#header').classList.toggle('header-show');
-            headerToggleBtn.classList.toggle('bi-list');
-            headerToggleBtn.classList.toggle('bi-x');
-        }
-        headerToggleBtn.addEventListener('click', headerToggle);
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
 
-        // Select all navigation links
-        const navLinks = document.querySelectorAll('#navmenu .nav-link');
-        // Select the header, nav links, and the button (if needed)
-        const header = document.querySelector('.header'); // Adjust the selector to match your header element
-
-        // Function to handle click and update the active link
-        navLinks.forEach(link => {
-            link.addEventListener('click', function () {
-                // Remove .active from any currently active link
-                navLinks.forEach(link => link.classList.remove('active'));
-
-                // Add .active to the clicked link
-                this.classList.add('active');
-            });
-        });
-
-        // Function to remove .header-show class when a nav link is clicked
-        navLinks.forEach(link => {
-            link.addEventListener('click', function () {
-                header.classList.remove('header-show');
-                headerToggleBtn.classList.toggle('bi-list');
-                headerToggleBtn.classList.toggle('bi-x');
-            });
-        });
-    </script>
 </body>
 
 </html>
