@@ -33,14 +33,25 @@ navLinks.forEach(link => {
     });
 });
 
+
 // function for email contact form
-function sendMail() {
+document.querySelector(".email-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent default form submission
+
     let parms = {
         name : document.getElementById("name-field").value,
         email : document.getElementById("email-field").value,
         subject : document.getElementById("subject-field").value,
         message : document.getElementById("message-field").value,
-    }
+    };
 
-    emailjs.send("service_cwx0eea", "template_m77pcyz",parms).then(alert("Your email was sent."))
-}
+    // Send the email via EmailJS
+    emailjs.send("service_cwx0eea", "template_m77pcyz", parms)
+        .then(function(response) {
+            alert("Your email was sent successfully.");
+        }, function(error) {
+            alert("There was an error sending your email. Please try again.");
+            console.error("EmailJS Error:", error);
+        });
+});
+
