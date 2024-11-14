@@ -32,3 +32,15 @@ navLinks.forEach(link => {
         headerToggleBtn.classList.toggle('bi-x');
     });
 });
+
+// function for email contact form
+function sendMail() {
+    let parms = {
+        name : document.getElementById("name-field").value,
+        email : document.getElementById("email-field").value,
+        subject : document.getElementById("subject-field").value,
+        message : document.getElementById("message-field").value,
+    }
+
+    emailjs.send("service_cwx0eea", "template_m77pcyz",parms).then(alert("Your email was sent."))
+}
