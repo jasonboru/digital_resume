@@ -35,11 +35,22 @@ navLinks.forEach(link => {
 
 
 // Function to clear the contact form fields after submission
-function clearForm(event) {
-    event.preventDefault(); // Prevents the default form submission
-    document.getElementById('contactForm').reset(); // Clears the form fields
-    // You can use the following line to submit the form manually if needed
-    event.target.submit();
-}
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById('contactForm');
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevent default submission
+        console.log("Form submission prevented");
+
+        // Submit the form manually
+        form.submit();
+
+        // Clear the form fields after a slight delay
+        setTimeout(() => {
+            form.reset();
+        }, 100);
+    });
+});
+
 
 
