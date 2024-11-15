@@ -34,24 +34,12 @@ navLinks.forEach(link => {
 });
 
 
-// function for email contact form
-document.querySelector(".email-form").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent default form submission
+// Function to clear the contact form fields after submission
+function clearForm(event) {
+    event.preventDefault(); // Prevents the default form submission
+    document.getElementById('contactForm').reset(); // Clears the form fields
+    // You can use the following line to submit the form manually if needed
+    event.target.submit();
+}
 
-    let parms = {
-        name : document.getElementById("name-field").value,
-        email : document.getElementById("email-field").value,
-        subject : document.getElementById("subject-field").value,
-        message : document.getElementById("message-field").value,
-    };
-
-    // Send the email via EmailJS
-    emailjs.send("service_cwx0eea", "template_m77pcyz", parms)
-        .then(function(response) {
-            alert("Your email was sent successfully.");
-        }, function(error) {
-            alert("There was an error sending your email. Please try again.");
-            console.error("EmailJS Error:", error);
-        });
-});
 
