@@ -3,7 +3,8 @@
   --default-color: #272829; 
   --heading-color: #050d18; 
   --accent-color: #ffd700;
-  --main-accent-color: #448b57;
+  --main-accent-color2: #448b57;
+  --main-accent-color: #66bb6a;
   --contrast-color: #ffffff; 
   --background-color: #f3f3f3;
 }
@@ -16,10 +17,18 @@
   --nav-mobile-background-color: #040b14; 
 }
 
+/* fonts */
+:root {
+  --dom-font: "Roboto", sans-serif;
+  --sub-font: "Raleway", sans-serif;
+  --alt-font: "Nunito", sans-serif;
+}
+
 
 /*General Styles */
 body {
   background-color: var(--background-color);
+  font-family: var(--sub-font);
 }
 
 a {
@@ -34,7 +43,7 @@ a:hover {
 }
 
 h2 {
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: var(--dom-font);
   font-weight: 700;
 }
 h1,
@@ -43,7 +52,7 @@ h4,
 h5,
 h6 {
   color: var(--default-color);
-  font-family: "IBM Plex Sans Condensed", sans-serif;
+  font-family: var(--sub-font);
 }
 
 /* header styles */
@@ -81,6 +90,7 @@ h6 {
 .header .logo h1 {
   font-size: 24px;
   margin: 0;
+  font-family: var(--alt-font);
   font-weight: 700;
   color: var(--contrast-color);
 }
@@ -162,6 +172,8 @@ h6 {
 
 #navmenu .nav-link.active {
   color: var(--nav-hover-color); 
+  font-size: 20px;
+  font-weight: 700;
 }
 
 #navmenu .nav-link.active .navicon {
@@ -212,6 +224,7 @@ h6 {
   width: 80%; 
   max-width: 300px; 
   border-radius: 5px; 
+  font-family: var(--alt-font);
   text-align: center;
   line-height: 1;
 }
@@ -287,6 +300,8 @@ section, .section {
 .home .name-animate {
   position: relative;
   z-index: 1;
+  padding-bottom: 200px;
+  text-shadow: 5px 5px 0px rgba(0, 0, 0, 0.6);
 }
 
 .home .name-animate h2 {
